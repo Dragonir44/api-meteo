@@ -1,0 +1,21 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.dayList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dayList__day {
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px; 
+}

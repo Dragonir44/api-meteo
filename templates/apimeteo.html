@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="form">
+        <form action="/api/search" method="post">
+            <input type="text" name="city" id="city">
+            <input type="submit" value="Rechercher">
+        </form>
+    </div>
+
+    <div class="dayList">
+        {% if data %}
+            {% for day in data['forecast'] %}
+                <div class="dayList__day day{{day.day}}">
+                    <p>Heure du relevé : {{ day.datetime }}</p>
+                
+                    <p><em>Température minimale : {{ day.tmin }}</em></p>
+                    <p><em>Température maximale : {{ day.tmax }}</em></p>
+                    <p>Risque de pluie : {{ day.probarain }}%</p>
+                    <p>Force du vent : {{ day.wind10m }} km/h</p>
+                    <p>Probabilité de gel : {{ day.probafrost }}%</p>
+                    <p>Probabilité de brouillard : {{ day.probafog }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+{% endblock %}

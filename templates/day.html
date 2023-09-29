@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Météo du jour {{ day.day }}</h1>
+
+    
+    <div class="mete.city">
+        <p>Heure du relevé : {{ day.datetime }}</p>
+        
+        <p><em>Température minimale : {{ day.tmin }}</em></p>
+        <p><em>Température maximale : {{ day.tmax }}</em></p>
+        <p>Risque de pluie : {{ day.probarain }}%</p>
+        <p>Force du vent : {{ day.wind10m }} km/h</p>
+        <p>Probabilité de gel : {{ day.probafrost }}%</p>
+        <p>Probabilité de brouillard : {{ day.probafog }}</p>
+
+    </div>
+{% endblock %}
+
+<!-- https://api.meteo-concept.com/documentation#action -->

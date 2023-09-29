@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Météo de {{ meteo.city.name }}</h1>
+
+    <div>
+        <p>Dernière mise à jour le {{ meteo['update'] }} </p>
+        <a href="/api/search">Voir la météo de votre ville</a>
+
+    </div>
+
+
+    {% for day in meteo['forecast'] %}
+        <a href="/day/{{ day.day }}">Voir la météo du jour à Rennes {{ day.day }} </a>
+        <p><strong> On accède aux données informatives sur la méthode de Rennes en consommant les urls suivantes ( voyez la syntaxe de l'API )
+            /api/meteo/id , ou id est un nombre compris entre 0 et 13 </strong></p>
+    {% endfor %}
+{% endblock %}
