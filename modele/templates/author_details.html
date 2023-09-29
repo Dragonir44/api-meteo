@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>Détail de l'auteur</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="author">
+        <p>Nom : {{ author.name }}</p>
+        <p>Adresse mail : {{ author.email }}</p>
+        <p>Age : {{ author.age }}</p>
+        <p>Bio : {{ author.bio }}</p>
+    </div>
+{% endblock %}
